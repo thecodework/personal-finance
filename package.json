@@ -27,7 +27,10 @@
   },
   "homepage": "https://github.com/thecodework/personal-finance#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "express-ejs-layouts": "^2.2.0",
+    "mongodb": "^2.2.22"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

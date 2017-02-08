@@ -1,0 +1,35 @@
+{
+  "name": "personal-finance",
+  "version": "1.0.0",
+  "description": "Personal Finance Management",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecodework/personal-finance.git"
+  },
+  "keywords": [
+    "Finance",
+    "Personal",
+    "Finance",
+    "Expense",
+    "Manager",
+    "Daily",
+    "Expenses"
+  ],
+  "author": "The Code Work",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thecodework/personal-finance/issues"
+  },
+  "homepage": "https://github.com/thecodework/personal-finance#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

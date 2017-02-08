@@ -1,9 +1,6 @@
 const express = require('express')
 const app = express()
-
-app.get('/', function(req, res) {
-  res.send('Welcome To Personal Finance')
-})
+require('./routes/api')(app)
 
 app.listen(3000, function(){
   console.log('listening on 3000')

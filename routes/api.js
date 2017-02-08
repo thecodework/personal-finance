@@ -1,5 +1,5 @@
 module.exports = function(app){
-  app.get('/', function(req, response){
+  app.get('/', function(req, res){
     res.send('Welcome to Personal Finance')
   })
 }

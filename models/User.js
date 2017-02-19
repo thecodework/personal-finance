@@ -6,8 +6,7 @@ var userSchema = new Schema({
   Name: String,
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  confirmPassword : {type : String, required : true},
-  dateOfBirth : Date
+  
   
 });
 

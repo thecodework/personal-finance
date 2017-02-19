@@ -8,7 +8,7 @@ var userSchema = new Schema({
   password: { type: String, required: true },
   confirmPassword : {type : String, required : true},
   dateOfBirth : Date
-  
+
 });
 
 userSchema.methods.dudify = function() {
@@ -18,7 +18,7 @@ userSchema.methods.dudify = function() {
   return this.name;
 }
 
-var expense = new schema({
+var expense = new Schema({
   email: String,
   expense : Number,
   typeOfExpense : String,
@@ -28,24 +28,24 @@ var expense = new schema({
   totalExpense :  Number
 })
 
-var income = new schema({
+var income = new Schema({
   email: String,
   income : Number,
   typeOfIncome : String,
   categoryOfIncome : String,
   dateOfIncome : Number,
   contents : String,
-  totalIncome : Number 
+  totalIncome : Number
 })
 
-var total new Schema({
+var total = new Schema({
   totalBalance : Number,
   email : String
 })
 // the schema is useless so far
 // we need to create a model using it
 var User = mongoose.model('User' , userSchema);
-var Expense mongoose.model('Expense' , expense);
+var Expense = mongoose.model('Expense' , expense);
 var Income = mongoose.model('Income' , income)
 var Total = mongoose.model('Total' , total)
 

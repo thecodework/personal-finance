@@ -17,37 +17,13 @@ userSchema.methods.dudify = function() {
   return this.name;
 }
 
-var expense = new schema({
-  email: String,
-  expense : Number,
-  typeOfExpense : String,
-  categoryOfExpense : String,
-  dateOfExpense : Number,
-  contents : String,
-  totalExpense :  Number
-})
 
-var income = new schema({
-  email: String,
-  income : Number,
-  typeOfIncome : String,
-  categoryOfIncome : String,
-  dateOfIncome : Number,
-  contents : String,
-  totalIncome : Number 
-})
 
-var total new Schema({
-  totalBalance : Number,
-  email : String
-})
-// the schema is useless so far
+
+
+//he schema is useless so far
 // we need to create a model using it
 var User = mongoose.model('User' , userSchema);
-var Expense mongoose.model('Expense' , expense);
-var Income = mongoose.model('Income' , income)
-var Total = mongoose.model('Total' , total)
-
 
 // make this available to our users in our Node applications
 module.exports = User;

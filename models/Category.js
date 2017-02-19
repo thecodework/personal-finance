@@ -1,10 +1,10 @@
 var mongoose = require('mongoose')
 
-var categoryScema = new mongoose.Schema({
+var categorySchema = new mongoose.Schema({
   name: {type: String , required: true},
   type: String
 })
 
-mongoose.model('Category' , categoryScema)
+var Category = mongoose.model('Category' , categorySchema)
 
 module.exports = Category

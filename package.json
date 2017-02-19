@@ -27,7 +27,8 @@
   },
   "homepage": "https://github.com/thecodework/personal-finance#readme",
   "dependencies": {
-    "body-parser": "^1.16.0",
+    "axios": "^0.15.3",
+    "body-parser": "^1.16.1",
     "express": "^4.14.1",
     "mongoose": "^4.8.3",
     "vue": "^2.1.10"
@@ -42,6 +43,7 @@
     "nodemon": "^1.11.0",
     "sass-loader": "^6.0.1",
     "style-loader": "^0.13.1",
+    "vue-hot-reload-api": "^2.0.9",
     "vue-html-loader": "^1.2.3",
     "vue-loader": "^11.1.0",
     "vue-template-compiler": "^2.1.10",

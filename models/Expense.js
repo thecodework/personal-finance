@@ -5,13 +5,14 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var expense = new schema({
-  email: String,
+  user: {type: Schema.ObjectId, ref: 'User'},
   expense : Number,
   typeOfExpense : String,
-  categoryOfExpense : String,
-  dateOfExpense : Number,
+  categoryOfExpense : {type: Schema.ObjectId, ref: 'Category' },
   contents : String,
-  totalExpense :  Number
+  totalExpense :  Number,
+  createdAt: { type: Date, default: Date.now },
+  updateAt: { type: Date, default: Date.now }
 })
 
 

@@ -3,11 +3,13 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var userSchema = new Schema({
-  Name: String,
+  firstName: String,
+  lastName: String,
+  email: String,
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  
-  
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
 });
 
 userSchema.methods.dudify = function() {

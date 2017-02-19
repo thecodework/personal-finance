@@ -1,4 +1,4 @@
-//This schema is to calculate total incomes 
+//This schema is to calculate total incomes
 
 
 
@@ -7,13 +7,14 @@ var Schema = mongoose.Schema;
 
 
 var income = new schema({
-  email: String,
+  user: {type: Schema.ObjectId, ref: 'User'},
   income : Number,
   typeOfIncome : String,
-  categoryOfIncome : String,
-  dateOfIncome : Number,
+  categoryOfIncome : {type: Schema.ObjectId, ref: 'Category' },
   contents : String,
-  totalIncome : Number 
+  totalIncome : Number,
+  createdAt: { type: Date, default: Date.now },
+  updateAt: { type: Date, default: Date.now }
 })
 
 

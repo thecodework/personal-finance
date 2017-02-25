@@ -11,7 +11,7 @@ module.exports = function(app) {
     app.post('/api/category', function(request, response) {
         Category({
             name: request.body.categoryName,
-            type: 'Expense'
+            type: request.body.categoryType
         }).save()
         response.end()
     })
@@ -28,9 +28,10 @@ module.exports = function(app) {
         })
     })
 
-    app.patch('/api/category', function(request, response){
+    app.patch('/api/category', function(request, response){//to update 
         Category.findOne({_id: request.body.id},function(err, data){
             data.name = request.body.categoryName
+            data.type= request.body.categoryType
             data.save()
         })
         response.end()

@@ -6,8 +6,9 @@
     
     <div>
         <h4>Select Category Type:
-        <span><input type="radio" name="category-type" value="Expence" v-model="categoryType">Expence
-        <input type="radio" name="category-type" value="Income" v-model="categoryType">Income<br></span></h4>
+        <input type="radio" name="category-type" value="expence" v-model="categoryType">Expence
+        <input type="radio" name="category-type" value="income" v-model="categoryType">Income<br></h4>
+
         <input type="text" name="category-name" v-model="categoryName">
         <button type="button" @click="addCategory" v-if="! isUpdating">Add Category</button>
         <button type="button" @click="updateCategory" v-else >Update Category</button>

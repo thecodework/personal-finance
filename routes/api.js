@@ -1,5 +1,6 @@
 module.exports = function(app) {
     var Category = require('./../models/Category')
+    var Account = require('./../models/Accounts')
     var bodyParser = require("body-parser")
 
     app.use(bodyParser.urlencoded({ extended: false }));
@@ -8,6 +9,8 @@ module.exports = function(app) {
     app.get('/', function(req, res) {
         res.sendFile(__dirname + './../public/index.html')
     })
+
+
     app.post('/api/category', function(request, response) {
         Category({
             name: request.body.categoryName,
@@ -16,9 +19,25 @@ module.exports = function(app) {
         response.end()
     })
 
+    app.post('/api/account', function(request, response) {
+        Account({
+            name: request.body.accountName,
+            initialBalance: request.body.initialBalance
+        }).save()
+        response.end()
+    })
+
+
+
     app.get('/api/category', function(request, response){
         Category.find({}, function(err, users) {
             response.send(users)
+        })
+    })
+
+    app.get('/api/account', function(request, response){
+        Account.find({}, function(err, accounts) {
+            response.send(accounts)
         })
     })
 
@@ -27,6 +46,15 @@ module.exports = function(app) {
             response.send(category)
         })
     })
+
+    app.get('/api/account/:id', function(request, response){
+        Account.findById(request.params.id, function(err, account){
+            response.send(account)
+        })
+    })
+
+
+
 
     app.patch('/api/category', function(request, response){//to update 
         Category.findOne({_id: request.body.id},function(err, data){
@@ -37,10 +65,28 @@ module.exports = function(app) {
         response.end()
     })
 
+    <!--to update the accounts-->
+    app.patch('/api/account', function(request, response){ 
+        Account.findOne({_id: request.body.id},function(err, account){
+            account.name = request.body.accountName
+            account.initialBalance= request.body.initialBalance
+            account.save()
+        })
+        response.end()
+    })
+
     app.delete('/api/category/:id', function(request, response){
         Category.remove({_id: request.params.id},function(err, data){
 
         })
         response.end()
     })
+
+    app.delete('/api/account/:id', function(request, response){
+        Account.remove({_id: request.params.id},function(err, account){
+
+        })
+        response.end()
+    })
+
 }

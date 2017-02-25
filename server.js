@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/frontend'))
 
 require('./routes/api')(app)
 // if our user.js file is at app/models/user.js
-var User = require('./models/User');
+
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/personalFinance')
 

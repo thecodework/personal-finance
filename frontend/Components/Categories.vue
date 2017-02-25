@@ -71,12 +71,6 @@ export default {
         }.bind(this))
     }
   },
-  
-
-
-
-
-
   mounted () {
     this.fetchCategory()
   }

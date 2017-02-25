@@ -19,25 +19,9 @@ module.exports = function(app) {
         response.end()
     })
 
-    app.post('/api/account', function(request, response) {
-        Account({
-            name: request.body.accountName,
-            initialBalance: request.body.initialBalance
-        }).save()
-        response.end()
-    })
-
-
-
     app.get('/api/category', function(request, response){
         Category.find({}, function(err, users) {
             response.send(users)
-        })
-    })
-
-    app.get('/api/account', function(request, response){
-        Account.find({}, function(err, accounts) {
-            response.send(accounts)
         })
     })
 
@@ -46,14 +30,6 @@ module.exports = function(app) {
             response.send(category)
         })
     })
-
-    app.get('/api/account/:id', function(request, response){
-        Account.findById(request.params.id, function(err, account){
-            response.send(account)
-        })
-    })
-
-
 
 
     app.patch('/api/category', function(request, response){//to update 
@@ -65,19 +41,40 @@ module.exports = function(app) {
         response.end()
     })
 
-    <!--to update the accounts-->
+    app.delete('/api/category/:id', function(request, response){
+        Category.remove({_id: request.params.id},function(err, data){
+
+        })
+        response.end()
+    })
+
+    app.post('/api/account', function(request, response) {
+        Account({
+            name: request.body.accountName,
+            initialBalance: request.body.initialBalance
+        }).save()
+        response.end()
+    })
+   
+
+    app.get('/api/account', function(request, response){
+        Account.find({}, function(err, accounts) {
+            response.send(accounts)
+        })
+    })
+
+    app.get('/api/account/:id', function(request, response){
+        Account.findById(request.params.id, function(err, account){
+            response.send(account)
+        })
+    })
+
+<!--to update the accounts-->
     app.patch('/api/account', function(request, response){ 
         Account.findOne({_id: request.body.id},function(err, account){
             account.name = request.body.accountName
             account.initialBalance= request.body.initialBalance
             account.save()
-        })
-        response.end()
-    })
-
-    app.delete('/api/category/:id', function(request, response){
-        Category.remove({_id: request.params.id},function(err, data){
-
         })
         response.end()
     })

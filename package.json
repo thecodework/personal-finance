@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --timeout 10000",
     "coverage": "./node_modules/.bin/istanbul cover _mocha -- -R spec",
-    "coveralls": "npm run coverage -- --report lcovonly && cat ./test/coverage/lcov.info | coveralls",
+    "coveralls": "npm run coverage && cat ./test/coverage/lcov.info | coveralls",
     "dev": "nodemon server.js"
   },
   "repository": {

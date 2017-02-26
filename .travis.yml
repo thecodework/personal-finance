@@ -6,3 +6,5 @@ node_js:
     - "7.2.0"
 services:
   - mongodb
+after_success:
+  - npm run coveralls

@@ -8,3 +8,5 @@ services:
   - mongodb
 after_success:
   - npm run coveralls
+notifications:
+  slack: thecodework:JOr2xDNgdivXC6eKt2R5Rvwt

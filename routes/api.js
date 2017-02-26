@@ -32,7 +32,7 @@ module.exports = function(app) {
     })
 
 
-    app.patch('/api/category', function(request, response){//to update 
+    app.patch('/api/category', function(request, response){//to update
         Category.findOne({_id: request.body.id},function(err, data){
             data.name = request.body.categoryName
             data.type= request.body.categoryType
@@ -55,7 +55,7 @@ module.exports = function(app) {
         }).save()
         response.end()
     })
-   
+
 
     app.get('/api/account', function(request, response){
         Account.find({}, function(err, accounts) {

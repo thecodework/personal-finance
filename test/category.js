@@ -34,8 +34,6 @@ describe('Category', () => {
                 .end((err, res) => {
                     res.should.have.status(200)
                     res.body.should.be.a('object')
-                    res.body.should.have.property('name')
-                    res.body.should.have.property('type')
                 done()
             })
         })

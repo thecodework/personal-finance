@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha --timeout 10000",
+    "coverage": "istanbul cover _mocha -- -R spec && open ./test/coverage/lcov-report/index.html",
     "dev": "nodemon server.js"
   },
   "repository": {

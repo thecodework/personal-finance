@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/thecodework/personal-finance.svg?branch=master)](https://travis-ci.org/thecodework/personal-finance)
 [![npm version](https://img.shields.io/npm/v/express-validator.svg)](https://www.npmjs.com/package/express-validator)
 [![Dependency Status](https://david-dm.org/thecodework/personal-finance.svg)](https://david-dm.org/thecodework/personal-finance)
-[![Coverage Status](https://coveralls.io/repos/github/thecodework/personal-finance/badge.svg?branch=master)](https://coveralls.io/github/thecodework/personal-finance?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/thecodework/personal-finance/badge.svg?branch=master&x=y)](https://coveralls.io/github/thecodework/personal-finance?branch=master)
 
 # Personal Finance
 

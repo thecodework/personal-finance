@@ -1,19 +1,23 @@
 process.env.NODE_ENV = 'test';
 let mongoose = require('mongoose')
-mongoose.Promise = global.Promise;
+mongoose.Promise = require('q').Promise
+if (!global.Promise) {
+  var q = require('q');
+  chai.request.addPromises(q.Promise);
+}
 let Category = require('./../models/Category')
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let app = require('./../server');
 let should = chai.should();
 chai.use(chaiHttp)
-describe('Category', () => {
+describe('**** Category ****', () => {
     beforeEach((done) => { //Before each test we empty the database
         Category.remove({}, (err) => {
             done();
         })
     })
-    describe('/GET /api/category', () => {
+    describe('GET - /category', () => {
         it('it should GET all the categories', (done) => {
             chai.request(app).get('/api/category').end((err, res) => {
                 res.should.have.status(200);
@@ -24,7 +28,7 @@ describe('Category', () => {
         });
     });
 
-    describe('/POST /api/category', () => {
+    describe('POST - /category', () => {
         it('it should create a category', (done) => {
             let category = {
                 name: 'Transport',
@@ -32,15 +36,17 @@ describe('Category', () => {
             }
             chai.request(app).post('/api/category')
                 .send(category)
-                .end((err, res) => {
+                .then((res) => {
                     res.should.have.status(200)
                     res.body.should.be.a('object')
                 done()
+            }).catch((err) => {
+                throw err
             })
         })
     });
 
-    describe('/GET/:id /api/category', () => {
+    describe('GET - /category/:id', () => {
         it('it should get a category by id', (done) => {
             let category = new Category({
                 name: 'Transport',
@@ -64,7 +70,7 @@ describe('Category', () => {
         })
     });
 
-    describe('/PATCH/:id /api/category', () => {
+    describe('PATCH - /category/:id', () => {
         it('it should update a category', (done) => {
             let category = new Category({
                 name: 'Transports',
@@ -83,7 +89,7 @@ describe('Category', () => {
         })
     })
 
-    describe('/DELETE/:id /api/category', () => {
+    describe('DELETE - /category/:id', () => {
         it('it should delete a category by id', (done) => {
             let category = new Category({
                 name: 'Transport',

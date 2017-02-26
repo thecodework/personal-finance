@@ -75,8 +75,9 @@ module.exports = function(app) {
             account.name = request.body.accountName
             account.initialBalance= request.body.initialBalance
             account.save()
+            response.send(account)
         })
-        response.end()
+        // response.end()
     })
 
     app.delete('/api/account/:id', function(request, response){

@@ -69,8 +69,8 @@ module.exports = function(app) {
         })
     })
 
-<!--to update the accounts-->
-    app.patch('/api/account', function(request, response){ 
+// to update the accounts
+    app.patch('/api/account', function(request, response){
         Account.findOne({_id: request.body.id},function(err, account){
             account.name = request.body.accountName
             account.initialBalance= request.body.initialBalance

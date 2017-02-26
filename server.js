@@ -8,8 +8,14 @@ require('./routes/api')(app)
 // if our user.js file is at app/models/user.js
 
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/personalFinance')
+
+if(process.env.NODE_ENV === 'test') {
+    mongoose.connect('mongodb://localhost/personalFinanceTest')
+}else{
+    mongoose.connect('mongodb://localhost/personalFinance')
+}
 
 app.listen(8000, function(){
   console.log('listening on 8000')
 })
+module.exports = app

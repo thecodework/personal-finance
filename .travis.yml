@@ -1,6 +1,5 @@
 install:
   - npm install
-  - node_modules/.bin/webpack
 language: node_js
 node_js:
     - "7.2.0"

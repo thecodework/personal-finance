@@ -14,6 +14,7 @@
             <li v-for="account in accounts">Name:{{ account.name}} Initial Balance:{{account.initialBalance}} <button style="color: green" @click="editAccount(account._id)">Edit</button> <button style="color: red" v-on:click="deleteAccount(account._id)">Delete</button></li>
         </ul>
     </div>
+    
 </div>
 </template>
 

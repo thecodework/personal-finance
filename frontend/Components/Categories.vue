@@ -1,4 +1,3 @@
-
 <template>
 <div>
     <h1>Welcome To Example Component</h1>

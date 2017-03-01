@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'test';
+lprocess.env.NODE_ENV = 'test';
 let mongoose = require('mongoose')
 mongoose.Promise = require('q').Promise
 if (!global.Promise) {

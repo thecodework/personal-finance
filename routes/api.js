@@ -1,5 +1,4 @@
 module.exports = function(app, router) {
-    var Category = require('./../models/Category')
     var Account = require('./../models/Accounts')
     var bodyParser = require("body-parser")
     var CategoryController = require('./../controllers/CategoryController')

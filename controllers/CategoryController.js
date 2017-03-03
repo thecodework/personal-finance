@@ -1,4 +1,5 @@
-var Category = require('./../models/Category')
+var mongoose = require('mongoose')
+var Category = require('./../models/Category')(mongoose)
 
 exports.postCategory = function(request, response) {
     Category({

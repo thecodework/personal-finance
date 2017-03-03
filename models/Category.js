@@ -1,10 +1,9 @@
-var mongoose = require('mongoose')
+module.exports = function(mongoose){
 
 var categorySchema = new mongoose.Schema({
   name: {type: String , required: true},
   type: String
 })
 
-var Category = mongoose.model('Category' , categorySchema)
-
-module.exports = Category
+return mongoose.model('Category' , categorySchema)
+}

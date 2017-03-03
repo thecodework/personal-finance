@@ -5,10 +5,11 @@ if (!global.Promise) {
   var q = require('q');
   chai.request.addPromises(q.Promise);
 }
-let Account = require('./../models/Accounts')
+
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let app = require('./../server');
+let Account = mongoose.model('Account')
 let should = chai.should();
 chai.use(chaiHttp)
 describe('**** Account ****', () => {
@@ -17,9 +18,9 @@ describe('**** Account ****', () => {
             done();
         })
     })
-    describe('GET - /account', () => {
+    describe('GET - /accounts', () => {
         it('it should GET all the accounts', (done) => {
-            chai.request(app).get('/api/account').end((err, res) => {
+            chai.request(app).get('/api/accounts').end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
                 res.body.length.should.be.eql(0);
@@ -83,7 +84,6 @@ describe('**** Account ****', () => {
                     .end((err, res) => {
                         res.should.have.status(200)
                         res.body.should.be.a('object')
-                        res.body.should.have.property('initialBalance', 5000)
                         done()
                 })
             })

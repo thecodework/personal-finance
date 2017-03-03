@@ -1,4 +1,3 @@
-
 module.exports = function(mongoose){
 
 var accountSchema = new mongoose.Schema({
@@ -7,5 +6,4 @@ var accountSchema = new mongoose.Schema({
 })
 
 return mongoose.model('Account' , accountSchema)
-
 }

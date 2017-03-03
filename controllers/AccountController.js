@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-var Account = require('./../models/Accounts')(mongoose)
+var Account = require('./../models/Account')(mongoose)
 
 exports.postAccount = function(request, response) {
     Account({

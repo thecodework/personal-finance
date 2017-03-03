@@ -10,7 +10,7 @@ module.exports = function(app, router) {
         res.sendFile(__dirname + './../public/index.html')
     })
 
-    router.route('/category')
+    router.route('/categories')
         .get(CategoryController.getCategories)
 
     router.route('/category')

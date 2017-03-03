@@ -2,7 +2,7 @@
 <div>
     <h1>Welcome To Example Component</h1>
     <h2>Manage Categories</h2>
-    
+
     <div>
         <h4>Select Category Type:
         <input type="radio" name="category-type" value="expence" v-model="categoryType">Expence
@@ -44,7 +44,7 @@ export default {
         }.bind(this))
     },
     fetchCategory () {
-        axios.get('http://localhost:8000/api/category').then(function(response){
+        axios.get('http://localhost:8000/api/categories').then(function(response){
             this.categories = response.data
         }.bind(this))
     },

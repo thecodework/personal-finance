@@ -2,6 +2,7 @@
 [![npm version](https://img.shields.io/npm/v/express-validator.svg)](https://www.npmjs.com/package/express-validator)
 [![Dependency Status](https://david-dm.org/thecodework/personal-finance.svg)](https://david-dm.org/thecodework/personal-finance)
 [![Coverage Status](https://coveralls.io/repos/github/thecodework/personal-finance/badge.svg?branch=master&x=d)](https://coveralls.io/github/thecodework/personal-finance?branch=master)
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 # Personal Finance
 

@@ -2,8 +2,8 @@
 <div>
 	<div>
 		<h3>Add New Accounts!</h3>
-		<input type="text" name="account-name" v-model="accountName" placeholder="Enter the bank name">
-		<input type="text" name="initial-balance" v-model="initialBalance" placeholder="Enter the initial balance">
+		  <input type="text" name="account-name" v-model="accountName" placeholder="Enter the bank name">
+		  <input type="text" name="initial-balance" v-model="initialBalance" placeholder="Enter the initial balance">
         <button type="button" @click="addAccount" v-if="! isUpdating">Add Account</button>
         <button type="button" @click="updateAccount" v-else >Update Account</button>
     </div>

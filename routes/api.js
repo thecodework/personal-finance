@@ -2,6 +2,8 @@ module.exports = function(app, router) {
     var Account = require('./../models/Accounts')
     var bodyParser = require("body-parser")
     var CategoryController = require('./../controllers/CategoryController')
+    var AccountController = require('./../controllers/AccountController')
+
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
 
@@ -20,8 +22,37 @@ module.exports = function(app, router) {
         .get(CategoryController.getCategory)
         .delete(CategoryController.deleteCategory)
 
+        
+    router.route('/accounts')
+        .get(AccountController.getAccounts)
+    
+    router.route('/account')
+        .post(AccountController.postAccount)
+        .patch(AccountController.updateAccount) 
+    
+    router.route('/account/:id')
+        .get(AccountController.getAccount)
+        .delete(AccountController.deleteAccount)      
+
     app.use('/api',router)
 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     app.post('/api/account', function(request, response) {
         Account({
             name: request.body.accountName,
@@ -60,5 +91,4 @@ module.exports = function(app, router) {
         })
         response.end()
     })
-
-}
+*/

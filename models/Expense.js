@@ -1,10 +1,9 @@
 //This schema is to calculate total expenses
 
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+module.exports = function('mongoose'){
 
-var expense = new schema({
+var expense = new mongoose.Schema({
   user: {type: Schema.ObjectId, ref: 'User'},
   expense : Number,
   typeOfExpense : String,
@@ -15,10 +14,5 @@ var expense = new schema({
   updateAt: { type: Date, default: Date.now }
 })
 
-
-
-
-var Expense = mongoose.model('Expense' , expense);
-
-
-module.exports = Expense;
+return mongoose.model('Expense' , expense);
+}

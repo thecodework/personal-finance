@@ -1,12 +1,8 @@
 //This schema is to calculate total incomes
 
+module.exports = function('mongoose'){
 
-
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-
-var income = new schema({
+var income = new mongoose.Schema({
   user: {type: Schema.ObjectId, ref: 'User'},
   income : Number,
   typeOfIncome : String,
@@ -18,6 +14,6 @@ var income = new schema({
 })
 
 
-var Income = mongoose.model('Income' , income)
+return mongoose.model('Income' , income)
 
-module.exports = Income;
+}

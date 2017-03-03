@@ -1,8 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-// create a schema
-var userSchema = new Schema({
+module.exports = function('mongoose'){
+
+var userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
@@ -12,20 +11,6 @@ var userSchema = new Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-userSchema.methods.dudify = function() {
-  // add some stuff to the users name
-  this.name = this.name + '-dude';
+return mongoose.model('User' , userSchema);
 
-  return this.name;
 }
-
-
-
-
-
-//he schema is useless so far
-// we need to create a model using it
-var User = mongoose.model('User' , userSchema);
-
-// make this available to our users in our Node applications
-module.exports = User;

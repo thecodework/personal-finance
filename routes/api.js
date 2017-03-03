@@ -1,8 +1,8 @@
-module.exports = function(app) {
+module.exports = function(app, router) {
     var Category = require('./../models/Category')
     var Account = require('./../models/Accounts')
     var bodyParser = require("body-parser")
-
+    var CategoryController = require('./../controllers/CategoryController')
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
 
@@ -10,43 +10,18 @@ module.exports = function(app) {
         res.sendFile(__dirname + './../public/index.html')
     })
 
+    router.route('/category')
+        .get(CategoryController.getCategories)
 
-    app.post('/api/category', function(request, response) {
-        Category({
-            name: request.body.categoryName,
-            type: request.body.categoryType
-        }).save()
-        response.end()
-    })
+    router.route('/category')
+        .post(CategoryController.postCategory)
+        .patch(CategoryController.updateCategory)
 
-    app.get('/api/category', function(request, response){
-        Category.find({}, function(err, users) {
-            response.send(users)
-        })
-    })
+    router.route('/category/:id')
+        .get(CategoryController.getCategory)
+        .delete(CategoryController.deleteCategory)
 
-    app.get('/api/category/:id', function(request, response){
-        Category.findById(request.params.id, function(err, category){
-            response.send(category)
-        })
-    })
-
-
-    app.patch('/api/category', function(request, response){//to update
-        Category.findOne({_id: request.body.id},function(err, data){
-            data.name = request.body.categoryName
-            data.type= request.body.categoryType
-            data.save()
-        })
-        response.end()
-    })
-
-    app.delete('/api/category/:id', function(request, response){
-        Category.remove({_id: request.params.id},function(err, data){
-
-        })
-        response.end()
-    })
+    app.use('/api',router)
 
     app.post('/api/account', function(request, response) {
         Account({

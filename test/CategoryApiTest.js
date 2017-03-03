@@ -17,9 +17,9 @@ describe('**** Category ****', () => {
             done();
         })
     })
-    describe('GET - /category', () => {
+    describe('GET - /categories', () => {
         it('it should GET all the categories', (done) => {
-            chai.request(app).get('/api/category').end((err, res) => {
+            chai.request(app).get('/api/categories').end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
                 res.body.length.should.be.eql(0);

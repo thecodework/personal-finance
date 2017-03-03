@@ -5,7 +5,7 @@ if (!global.Promise) {
   var q = require('q');
   chai.request.addPromises(q.Promise);
 }
-let Category = require('./../models/Category')
+let Category = mongoose.model('Category')
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let app = require('./../server');

@@ -1,13 +1,10 @@
 //This schema is to calculate total expenses
-
-
-module.exports = function('mongoose'){
+module.exports = function(mongoose){
 
 var expense = new mongoose.Schema({
-  user: {type: Schema.ObjectId, ref: 'User'},
   expense : Number,
   typeOfExpense : String,
-  categoryOfExpense : {type: Schema.ObjectId, ref: 'Category' },
+  categoryOfExpense : String,
   contents : String,
   totalExpense :  Number,
   createdAt: { type: Date, default: Date.now },

@@ -1,11 +1,9 @@
 module.exports = function(app, router) {
-<<<<<<< HEAD
-    
-=======
->>>>>>> 6ffd59ce53f10c0960f170d5b711aa404711d089
+
     var bodyParser = require("body-parser")
     var CategoryController = require('./../controllers/CategoryController')
     var AccountController = require('./../controllers/AccountController')
+    var ExpenseController = require('./../controllers/ExpenseController')
 
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
@@ -25,10 +23,7 @@ module.exports = function(app, router) {
         .get(CategoryController.getCategory)
         .delete(CategoryController.deleteCategory)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6ffd59ce53f10c0960f170d5b711aa404711d089
+  
     router.route('/accounts')
         .get(AccountController.getAccounts)
 
@@ -39,6 +34,19 @@ module.exports = function(app, router) {
     router.route('/account/:id')
         .get(AccountController.getAccount)
         .delete(AccountController.deleteAccount)
+
+
+
+    router.route('/expenses')
+        .get(ExpenseController.getExpenses)
+
+    router.route('/expense')
+        .post(ExpenseController.postExpense)
+        .patch(ExpenseController.updateExpense)
+
+    router.route('/expense/:id')
+        .get(ExpenseController.getExpense)
+        .delete(ExpenseController.deleteExpense)  
 
     app.use('/api',router)
 }

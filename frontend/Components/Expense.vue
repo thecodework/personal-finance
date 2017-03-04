@@ -39,7 +39,7 @@
 			<h2> Your All Expense Details!</h2>
           
         <ul>
-            <li v-for="expense in expenses">Expense:{{ expense.expense}} Type of Expense:{{expense.typeOfExpense}} Category Of Expense:{{expense.categoryOfExpense}} Contents:{{expense.contents}} Total expense:{{expense.totalExpense}}<button style="color: green" @click="editExpense(expense._id)">Edit</button> <button style="color: red" v-on:click="deleteExpense(expense._id)">Delete</button></li>
+            <li v-for="exp in expenses">Expense:{{ exp.expense}} Type of Expense:{{exp.typeOfExpense}} Category Of Expense:{{exp.categoryOfExpense}} Contents:{{exp.contents}} Total expense:{{exp.totalExpense}}<button style="color: green" @click="editExpense(exp._id)">Edit</button> <button style="color: red" v-on:click="deleteExpense(exp._id)">Delete</button></li>
         </ul>
 		</div>
 	</div>
@@ -58,7 +58,7 @@ export default {
   		categoryOfExpense : '',
   		contents :'',
       expenses : [],
-  		totalExpense : '',
+  		
   		isUpdating : false ,
   		updatingExpenseId : ''
   		    }
@@ -66,7 +66,7 @@ export default {
 
     computed: {
         totalExpense: function () {
-                return this.totalExpense +  this.expense
+                return   this.expense
                     }
      },
   	methods: {

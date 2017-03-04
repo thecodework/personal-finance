@@ -3,11 +3,11 @@ var Expense = require('./../models/Expense')(mongoose)
 
 exports.postExpense = function(request, response) {
     Expense({
-        expense: response.body.expense,
-        typeOfExpense : response.body.typeOfExpense,
-        categoryOfExpense : response.body.categoryOfExpense,
-        totalExpense : response.body.totalExpense,
-        contents :response.body.contents
+        expense: request.body.expense,
+        typeOfExpense : request.body.typeOfExpense,
+        categoryOfExpense : request.body.categoryOfExpense,
+        totalExpense : request.body.totalExpense,
+        contents :request.body.contents
     }).save()
     response.end()
 }
@@ -26,11 +26,11 @@ exports.getExpense =  function(request, response){
 
 exports.updateExpense =  function(request, response){
     Expense.findOne({_id: request.body.id},function(err, data){
-        data.expense= response.body.expense
-        data.typeOfExpense = response.body.typeOfExpense
-        data.categoryOfExpense = response.body.categoryOfExpense
-        data.totalExpense = response.body.totalExpense
-        data.contents =response.body.contents
+        data.expense= request.body.expense
+        data.typeOfExpense = request.body.typeOfExpense
+        data.categoryOfExpense = request.body.categoryOfExpense
+        data.totalExpense = request.body.totalExpense
+        data.contents =request.body.contents
         data.save()
     })
     response.end()

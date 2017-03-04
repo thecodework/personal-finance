@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/thecodework/personal-finance.png?label=ready&title=Ready)](https://waffle.io/thecodework/personal-finance)
 [![Build Status](https://travis-ci.org/thecodework/personal-finance.svg?branch=master)](https://travis-ci.org/thecodework/personal-finance)
 [![npm version](https://img.shields.io/npm/v/express-validator.svg)](https://www.npmjs.com/package/express-validator)
 [![Dependency Status](https://david-dm.org/thecodework/personal-finance.svg)](https://david-dm.org/thecodework/personal-finance)

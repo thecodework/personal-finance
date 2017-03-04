@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose')
 var Category = require('./../models/Category')(mongoose)
 
@@ -10,8 +11,8 @@ exports.postCategory = function(request, response) {
 }
 
 exports.getCategories = function(request, response){
-    Category.find({}, function(err, users) {
-        response.send(users)
+    Category.find({}, function(err, categories) {
+        response.send(categories)
     })
 }
 
@@ -37,3 +38,5 @@ exports.deleteCategory =  function(request, response){
     })
     response.end()
 }
+
+

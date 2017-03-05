@@ -92,7 +92,7 @@ export default {
       editExpense (id) {
         this.isUpdating = true
         axios.get('http://localhost:8000/api/expense/' + id).then(function(response){
-            this.expense=  response.data.expens,
+            this.expense=  response.data.expense
             this.typeOfExpense = response.data.typeOfExpense
             this.categoryOfExpense = response.data.categoryOfExpense
             his.totalExpense = response.data.totalExpense
@@ -103,7 +103,7 @@ export default {
 
       updateExpense () {
         axios.patch('http://localhost:8000/api/expense/',{id: this.updatingExpenseId, expense: this.expense ,typeOfExpense:this.typeOfExpense , categoryOfExpense:this.categoryOfExpense , totalExpense:this.totalExpense ,
-        contents:this.contents }).then(function(response){
+        contents: this.contents }).then(function(response){
             this.fetchExpense()
             this.expense= ''
             this.totalExpense = ''

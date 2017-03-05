@@ -24,8 +24,8 @@
     			<option value="others">others</option>
  	 			</select>
 
-        <p> Enter Expense Description
- 	 			<input type="text" name="contents" v-model="contents" placeholder="Enter the Content">
+        <p> Enter Expense Description:
+ 	 	<input type="text" name="contents" v-model="contents" placeholder="Enter the Content">
         </p>
 
         	<button type="button" @click="addExpense" v-if="! isUpdating">Add Expense</button>
@@ -53,10 +53,10 @@ import axios from 'axios'
 export default {
   data () {
     return {
-  		expense :'',
-  		typeOfExpense :'',
+  		expense : '',
+  		typeOfExpense : '',
   		categoryOfExpense : '',
-  		contents :'',
+  		contents : '',
       expenses : [],
   		
   		isUpdating : false ,
@@ -85,25 +85,24 @@ export default {
 
       fetchExpense () {
         axios.get('http://localhost:8000/api/expenses').then(function(response){
-            this.expenses= response.data
+            this.expenses = response.data
         }.bind(this))
       },
 
       editExpense (id) {
         this.isUpdating = true
         axios.get('http://localhost:8000/api/expense/' + id).then(function(response){
-            this.expense=  response.data.expense
+            this.expense =  response.data.expense
             this.typeOfExpense = response.data.typeOfExpense
             this.categoryOfExpense = response.data.categoryOfExpense
-            his.totalExpense = response.data.totalExpense
-            this.contents= response.data.contents
-            this.updatingCategoryId = response.data._id
+            this.totalExpense = response.data.totalExpense
+            this.contents = response.data.contents
+            this.updatingExpenseId = response.data._id
         }.bind(this))
       },
 
       updateExpense () {
-        axios.patch('http://localhost:8000/api/expense/',{id: this.updatingExpenseId, expense: this.expense ,typeOfExpense:this.typeOfExpense , categoryOfExpense:this.categoryOfExpense , totalExpense:this.totalExpense ,
-        contents: this.contents }).then(function(response){
+        axios.patch('http://localhost:8000/api/expense/',{id: this.updatingExpenseId, expense: this.expense ,typeOfExpense:this.typeOfExpense , categoryOfExpense:this.categoryOfExpense , totalExpense:this.totalExpense , contents: this.contents }).then(function(response){
             this.fetchExpense()
             this.expense= ''
             this.totalExpense = ''

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
 var Expense = require('./../models/Expense')(mongoose)
 
+
 exports.postExpense = function(request, response) {
     Expense({
         expense: request.body.expense,
@@ -26,7 +27,7 @@ exports.getExpense =  function(request, response){
 
 exports.updateExpense =  function(request, response){
     Expense.findOne({_id: request.body.id},function(err, data){
-        data.expense= request.body.expense
+        data.expense = request.body.expense
         data.typeOfExpense = request.body.typeOfExpense
         data.categoryOfExpense = request.body.categoryOfExpense
         data.totalExpense = request.body.totalExpense

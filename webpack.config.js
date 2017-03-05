@@ -13,6 +13,12 @@ module.exports = {
         }, {
             test: /\.vue$/,
             loader: 'vue'
+        }, {
+            test: /\.css$/,
+            loader: "style-loader!css-loader"
+        }, {
+            test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+            loader: 'url-loader?limit=100000'
         }],
     },
     vue: {
@@ -21,8 +27,8 @@ module.exports = {
         }
     },
     resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.common.js'
+        alias: {
+            'vue$': 'vue/dist/vue.common.js'
+        }
     }
-  }
 }

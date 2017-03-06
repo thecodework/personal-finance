@@ -22,7 +22,7 @@ Personal Finance is loaded with all necessary features which can help you manage
     webpack && npm run dev
     
 ## Tests and Coverage
-For unit test `mocha` and `chai` is being used. And using `istanbul` for generating code coverage repot.
+For unit test `mocha` and `chai` is being used. And using `istanbul` for generating code coverage report.
 
     npm run test
     

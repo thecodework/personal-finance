@@ -17,12 +17,13 @@
         </p>
         
         <p> Selesct The Category Of Expense:
- 	 			<select v-model="categoryOfExpense" placeholder="Select the Category Type" >
-    			<option value="food">Food</option>
-    			<option value="travel">Travel</option>
-    			<option value="shopping">Shopping</option>
-    			<option value="others">others</option>
- 	 			</select>
+ 	 			
+        <select v-model="categoryOfExpense" placeholder="Select the Expense Category">
+          <option value="shopping">Shoping</option>
+          <option value="cloths">cloths</option>
+          <option value="others">others</option>
+        </select>
+
 
         <p> Enter Expense Description:
  	 	<input type="text" name="contents" v-model="contents" placeholder="Enter the Content">
@@ -58,7 +59,7 @@ export default {
   		categoryOfExpense : '',
   		contents : '',
       expenses : [],
-  		
+  		categories : [],
   		isUpdating : false ,
   		updatingExpenseId : ''
   		    }
@@ -88,6 +89,12 @@ export default {
             this.expenses = response.data
         }.bind(this))
       },
+
+      fetchCategory () {
+        axios.get('http://localhost:8000/api/categories').then(function(response){
+            this.categories = response.data
+        }.bind(this))
+    },
 
       editExpense (id) {
         this.isUpdating = true

@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));  
 app.use(passport.initialize());  
 
-mongoose.connect(config.test); 
+//mongoose.connect(config.test); 
 
 require('./config/passport')(passport);  
 

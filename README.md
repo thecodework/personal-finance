@@ -28,7 +28,7 @@ For unit test `mocha` and `chai` is being used. And using `istanbul` for generat
     
     npm run coverage
 
-We're currently warming it up for the production release, and will go live at the earliest.
+We're currently warming it up for the production release. will be live soon.
 
 ## License
 

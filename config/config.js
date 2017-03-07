@@ -1,8 +1,10 @@
-var config = {};
+//var config = {};
 
-config.mongoURI = {
-  development: 'mongodb://localhost/personalFinance',
-  test: 'mongodb://localhost/personalFinanceTest'
+module.exports= {
+
+   'secret': 'putsomethingtopsecrethere',
+  'development': 'mongodb://localhost/personalFinance',
+  'test': 'mongodb://localhost/personalFinanceTest'
 };
 
-module.exports = config;
+//module.exports = config;

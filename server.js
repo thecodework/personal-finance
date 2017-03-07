@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const router = express.Router();
 
-//let config1= require('./config/config')
+let config= require('./config/config')
 
 app.use(express.static(__dirname + '/public'))
 app.use(express.static(__dirname + '/frontend'))
@@ -14,7 +14,7 @@ var mongoose = require('mongoose')
 var bodyParser = require('body-parser');  
 var morgan = require('morgan');  
 var passport = require('passport'); 
-var config =require('./config/main');
+//var config =require('./config/main');
 var User = require('./app/models/user');     
 var jwt = require('jsonwebtoken'); 
 var port=8000; 
@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));  
 app.use(passport.initialize());  
 
-mongoose.connect(config.database); 
+mongoose.connect(config.test); 
 
 require('./config/passport')(passport);  
 

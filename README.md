@@ -22,10 +22,14 @@ Personal Finance is loaded with all necessary features which can help you manage
     webpack && npm run dev
     
 ## Tests and Coverage
-For unit test `mocha` and `chai` is being used. And using `istanbul` for generating code coverage repot.
+For unit test `mocha` and `chai` is being used. And using `istanbul` for generating code coverage report.
 
     npm run test
     
     npm run coverage
 
-We're currently warming it up for production, and will go live at the earliest.
+We're currently warming it up for the production release, and will go live at the earliest.
+
+## License
+
+The MIT License (MIT). Please see [License File](https://github.com/thecodework/personal-finance/blob/master/LICENSE) for more information.

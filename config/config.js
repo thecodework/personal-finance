@@ -1,8 +1,8 @@
-var config = {};
+var config1 = {};
 
-config.mongoURI = {
+config1.mongoURI = {
   development: 'mongodb://localhost/personalFinance',
   test: 'mongodb://localhost/personalFinanceTest'
 };
 
-module.exports = config;
+module.exports = config1;

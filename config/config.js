@@ -6,7 +6,6 @@ module.exports= {
   'development': 'mongodb://localhost/personalFinance',
   'test': 'mongodb://localhost/personalFinanceTest'
 
-  
 };
 
 //module.exports = config;

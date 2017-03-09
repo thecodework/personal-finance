@@ -4,6 +4,7 @@ module.exports = function(app, router) {
     var CategoryController = require('./../controllers/CategoryController')
     var AccountController = require('./../controllers/AccountController')
     var ExpenseController = require('./../controllers/ExpenseController')
+    var UserController = require('./../controllers/UserController')
 
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
@@ -23,7 +24,7 @@ module.exports = function(app, router) {
         .get(CategoryController.getCategory)
         .delete(CategoryController.deleteCategory)
 
-  
+
     router.route('/accounts')
         .get(AccountController.getAccounts)
 
@@ -46,7 +47,12 @@ module.exports = function(app, router) {
 
     router.route('/expense/:id')
         .get(ExpenseController.getExpense)
-        .delete(ExpenseController.deleteExpense)  
+        .delete(ExpenseController.deleteExpense)
+
+    router.route('/authenticate')
+        .post(UserController.authenticate)
+    router.route('/register')
+        .post(UserController.register)
 
     app.use('/api',router)
 }

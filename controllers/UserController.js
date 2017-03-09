@@ -1,7 +1,4 @@
-// var mongoose = require('mongoose')
-// mongoose.Promise = require('q').Promise
 let config= require('./../config/config')
-// var User = require('./../models/User')(mongoose)
 var jwt = require('jsonwebtoken')
 
 exports.authenticate = function(req, res) {

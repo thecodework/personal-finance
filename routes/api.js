@@ -1,16 +1,21 @@
-module.exports = function(app, router) {
+module.exports = function(app, router, passport, mongoose) {
 
     var bodyParser = require("body-parser")
     var CategoryController = require('./../controllers/CategoryController')
     var AccountController = require('./../controllers/AccountController')
     var ExpenseController = require('./../controllers/ExpenseController')
     var UserController = require('./../controllers/UserController')
-
+    require('./../config/passport')(passport, mongoose)
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
+    app.use(passport.initialize())
 
-    app.get('/', function(req, res) {
+    router.get('/', function(req, res) {
         res.sendFile(__dirname + './../public/index.html')
+    })
+
+    router.get('/dashboard', passport.authenticate('jwt', { session: false }), function(req, res) {
+      res.send('It worked! User id is: ' + req.user._id + '.')
     })
 
     router.route('/categories')

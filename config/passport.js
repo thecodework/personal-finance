@@ -4,7 +4,7 @@ var config = require('../config/config')
 
 // Setup work and export for the JWT passport strategy
 module.exports = function(passport, mongoose) {
-  var User = require('../models/User')(mongoose)
+  var User = mongoose.model('User')
   var opts = {}
   opts.jwtFromRequest = ExtractJwt.fromAuthHeader()
   opts.secretOrKey = config.secret

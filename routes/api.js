@@ -1,10 +1,10 @@
 module.exports = function(app, router, passport, mongoose) {
 
     var bodyParser = require("body-parser")
-    var CategoryController = require('./../controllers/CategoryController')
-    var AccountController = require('./../controllers/AccountController')
-    var ExpenseController = require('./../controllers/ExpenseController')
-    var UserController = require('./../controllers/UserController')
+    var CategoryController = require('./../controllers/CategoryController')(mongoose)
+    var AccountController = require('./../controllers/AccountController')(mongoose)
+    var ExpenseController = require('./../controllers/ExpenseController')(mongoose)
+    var UserController = require('./../controllers/UserController')(mongoose)
     require('./../config/passport')(passport, mongoose)
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());

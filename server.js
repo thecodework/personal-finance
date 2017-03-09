@@ -3,10 +3,6 @@ const app = express()
 const router = express.Router()
 var passport = require('passport')
 
-var bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
 let config= require('./config/config')
 var mongoose = require('mongoose')
 mongoose.Promise = require('q').Promise

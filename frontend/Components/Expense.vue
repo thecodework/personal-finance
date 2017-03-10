@@ -1,23 +1,26 @@
 <template>
   <div>
 
-    <div>
-      <h2> Add Your Expense Here! </h2>
-      <hr>
+  <div>
 <form class="ui form">
       <div class="field">
-        <div class="ui basic buttons">
-          <div class="ui button active">Cash</div>
-          <div class="ui button">Atm</div>
-          <div class="ui button">Online</div>
+      <div class="ui fluid search selection dropdown">
+      <input type="hidden" name="Account">
+      <i class="dropdown icon"></i>
+      <div class="default text">Select Account</div>
+        <div class="menu">
+        <div v-for="account in accounts" class="item" data-value="_id"><i class="af flag"></i>{{ account.name }}</div>
         </div>
       </div>
+      </div>
       <div class="field">
-        <div class="ui basic buttons">
-          <div class="ui button">Food</div>
-          <div class="ui button active">Travel</div>
-          <div class="ui button">Shopping</div>
-          <div class="ui button">Others</div>
+        <div class="ui fluid search selection dropdown">
+        <input type="hidden" name="Category">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Category</div>
+          <div class="menu">
+          <div v-for="category in categories" class="item" data-value="_id"><i class="af flag"></i>{{ category.name }}</div>
+          </div>
         </div>
       </div>
       <div class="field">
@@ -27,19 +30,19 @@
           <div class="ui basic label">.00</div>
         </div>
       </div>
-        
+
 
         <div class="field">
           <input type="text" name="first-name" v-model="contents" placeholder="Description">
         </div>
-       
+
         <div class="ui buttons">
           <button class="ui button">Cancel</button>
           <div class="or"></div>
           <button class="ui positive button" @click="addExpense" v-if="! isUpdating">Save</button>
           <button class="ui positive button" @click="addExpense" v-else>Update</button>
         </div>
-          
+
           </form>
     </div>
 
@@ -63,6 +66,8 @@ export default {
       typeOfExpense : '',
       categoryOfExpense : '',
       contents : '',
+      accounts: [],
+      categories: [],
       expenses : [],
       isUpdating : false ,
       updatingExpenseId : ''
@@ -75,7 +80,16 @@ export default {
                     }
      },
     methods: {
-
+      fetchAccounts(){
+        axios.get('http://localhost:8000/api/accounts').then(function(response){
+          this.accounts = response.data
+        }.bind(this))
+      },
+      fetchCategories () {
+          axios.get('http://localhost:8000/api/categories').then(function(response){
+              this.categories = response.data
+          }.bind(this))
+      },
       addExpense () {
         axios.post('http://localhost:8000/api/expense', {expense: this.expense, typeOfExpense: this.typeOfExpense , categoryOfExpense: this.categoryOfExpense ,
         contents:this.contents , totalExpense:this.totalExpense}).then(function(response){
@@ -128,11 +142,12 @@ export default {
         axios.delete('http://localhost:8000/api/expense/' + id).then(function(response){
             this.fetchExpense()
         }.bind(this))
-    },
-    mounted () {
-    this.fetchExpense()
-      }
-
+    }
+  },
+  mounted () {
+    this.fetchAccounts()
+    this.fetchCategories()
+    $('.ui.dropdown').dropdown()
   }
 }
 

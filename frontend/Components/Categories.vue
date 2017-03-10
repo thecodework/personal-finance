@@ -2,7 +2,6 @@
 <div>
     <h1>Welcome To Example Component</h1>
     <h2>Manage Categories</h2>
-
     <div>
         <h4>Select Category Type:
         <input type="radio" name="category-type" value="expence" v-model="categoryType">Expence
@@ -18,7 +17,6 @@
             <li v-for="category in categories">Name:{{ category.name}} Type:{{category.type}} <button style="color: green" @click="editCategory(category._id)">Edit</button> <button style="color: red" v-on:click="deleteCategory(category._id)">Delete</button></li>
         </ul>
     </div>
-
 </div>
 </template>
 

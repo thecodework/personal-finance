@@ -4,13 +4,17 @@
     <title>Personal Finance</title>
 </head>
 <body>
-<div id="mainContainer" class="ui stackable grid" style="margin-top: 20px">
-
-<router-link to="/">Add Category</router-link>
-<router-link to="/account">Add Account</router-link>
-<router-link to="/expense">Add Expense</router-link>
-
-<router-view></router-view>
+    <div id="mainContainer">
+        <div class="ui menu">
+            <router-link to="/" class="item">Dashboard</router-link>
+            <router-link to="/account" class="item">Add Account</router-link>
+            <router-link to="/expense" class="item">Add Expense</router-link>
+            <router-link to="/category" class="item">Add Category</router-link>
+        </div>
+        <div class="ui stackable three column centered grid">
+          <div class="column"><router-view></router-view></div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="./builds/bundle.js"></script>

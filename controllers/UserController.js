@@ -2,6 +2,11 @@ let config= require('./../config/config')
 var jwt = require('jsonwebtoken')
 module.exports = function(mongoose){
     let User = require('../models/User')(mongoose)
+
+    /**
+     * Authenticate the user using given email and password.
+     * If authenticated returns "JWT access token"
+     */
     this.authenticate = function(req, res) {
       User.findOne({
         email: req.body.email
@@ -27,6 +32,10 @@ module.exports = function(mongoose){
       })
     }
 
+    /**
+     * Register a user using email and password.
+     *
+     */
     this.register =  function(req, res) {
       if(!req.body.email || !req.body.password) {
         res.json({ success: false, message: 'Please enter email and password.' })

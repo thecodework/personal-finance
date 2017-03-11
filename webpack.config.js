@@ -1,3 +1,4 @@
+var webpack = require('webpack')
 module.exports = {
     entry: './frontend/main.js',
     output: {
@@ -30,5 +31,12 @@ module.exports = {
         alias: {
             'vue$': 'vue/dist/vue.common.js'
         }
-    }
+    },
+    plugins:[
+    new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery'
+    })
+]
 }

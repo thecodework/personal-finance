@@ -40,6 +40,7 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "semantic-ui-css": "^2.2.9",
+    "store2": "^2.5.0",
     "vue": "^2.1.10",
     "vue-router": "2.1.1"
   },

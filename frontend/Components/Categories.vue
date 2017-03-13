@@ -1,5 +1,5 @@
 <template>
-<div>
+<f7-page name="account">
     <h1>Welcome To Example Component</h1>
     <h2>Manage Categories</h2>
     <div>
@@ -17,7 +17,7 @@
             <li v-for="category in categories">Name:{{ category.name}} Type:{{category.type}} <button style="color: green" @click="editCategory(category._id)">Edit</button> <button style="color: red" v-on:click="deleteCategory(category._id)">Delete</button></li>
         </ul>
     </div>
-</div>
+</f7-page>
 </template>
 
 <script>

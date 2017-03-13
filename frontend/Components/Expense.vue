@@ -1,7 +1,5 @@
 <template>
-  <div>
-
-  <div>
+  <f7-page name="account">
 <form class="ui form">
       <div class="field">
       <div class="ui fluid search selection dropdown">
@@ -52,6 +50,7 @@
         </ul>
     </div>
   </div>
+  </f7-page>
 </template>
 
 
@@ -147,7 +146,7 @@ export default {
   mounted () {
     this.fetchAccounts()
     this.fetchCategories()
-    $('.ui.dropdown').dropdown()
+    // $('.ui.dropdown').dropdown()
   }
 }
 

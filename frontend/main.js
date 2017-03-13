@@ -1,37 +1,42 @@
 import Vue from 'vue'
-import Category from './Components/Categories.vue'
-import Account from './Components/Accounts.vue'
-import Expense from './Components/Expense.vue'
-import Dashboard from './Components/Dashboard.vue'
-import Login from './Components/Login.vue'
-import Register from './Components/Register.vue'
+import App from './App.vue'
 import VueRouter from 'vue-router'
-// import jquery from 'jquery'
-// global.jQuery = jquery
-// var $ = jquery
-// window.$ = jquery
-// import 'jquery/dist/jquery.min.js'
-import 'semantic-ui-css/semantic.css'
-import 'semantic-ui-css/semantic.js'
+import Routes from './routes'
+// Import F7
+import Framework7 from 'framework7'
+// Import F7 Vue Plugin
+import Framework7Vue from 'framework7-vue'
+// Import F7 iOS Theme Styles
+// import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
+// import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min.css'
+/* OR for Material Theme: */
+import Framework7Theme from 'framework7/dist/css/framework7.material.min.css'
+import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
+// import 'semantic-ui-css/semantic.css'
+// import 'semantic-ui-css/semantic.js'
 Vue.use(VueRouter)
-
-
- const router = new VueRouter({
-    mode : 'history' ,
-    routes : [
-        {path: '/login', component: Login},
-        {path: '/register', component: Register},
-        {path: '/dashborad', component: Dashboard},
-        {path : '/expense' , component : Expense},
-        {path : '/account', component : Account},
-        {path : '/category', component : Category}
-    ]
-})
-
+Vue.use(Framework7Vue)
+// const router = new VueRouter({
+//     mode: 'history',
+//     routes: Routes
+// })
 new Vue({
     el: '#mainContainer',
-   router,
-    mounted() {
-    }
-//   / components: { Category, Account }
+    template: '<App/>',
+    // router,
+    framework7: {
+        root: '#mainContainer',
+        /* Uncomment to enable Material theme: */
+        material: true,
+        routes: Routes,
+        animateNavBackIcon: true,
+        pushState: true,
+        pushStateSeparator: '',
+        swipePanel: 'left',
+        onPageInit: function() {
+            console.log('hi')
+        }
+    },
+    mounted() {},
+    components: { App }
 })

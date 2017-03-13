@@ -1,5 +1,5 @@
 <template>
-<div>
+<f7-page name="account">
 	<div>
 		<h3>Add New Accounts!</h3>
 		  <input type="text" name="account-name" v-model="accountName" placeholder="Enter the bank name">
@@ -15,7 +15,7 @@
         </ul>
     </div>
 
-</div>
+</f7-page>
 </template>
 
 

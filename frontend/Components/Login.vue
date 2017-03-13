@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <f7-page name="login">
         <div class="column">
             <h2 class="ui teal image header">
               <!-- <img src="assets/images/logo.png" class="image"> -->
@@ -32,7 +32,7 @@
               New to us? <router-link to="/register" class="item">Register</router-link>
             </div>
           </div>
-    </div>
+    </f7-page>
 </template>
 <script>
 import axios from 'axios'

@@ -1,3 +1,4 @@
+import Tabs from './Components/Tabs.vue'
 import Welcome from './Components/Welcome.vue'
 import Category from './Components/Categories.vue'
 import Account from './Components/Accounts.vue'
@@ -7,7 +8,20 @@ import Login from './Components/Login.vue'
 import Register from './Components/Register.vue'
 export default [{
     path: '/',
-    components: Welcome
+    components: Tabs,
+    tabs: [{
+        path: '/account/',
+        tab: 'tab1',
+        component: Account
+    }, {
+        path: '/expense/',
+        tab: 'tab2',
+        component: Expense
+    },{
+        path: '/category/',
+        tab: 'tab3',
+        component: Category
+    }]
 }, {
     path: '/login',
     component: Login
@@ -17,13 +31,4 @@ export default [{
 }, {
     path: '/dashborad',
     component: Dashboard
-}, {
-    path: '/expense',
-    component: Expense
-}, {
-    path: '/account',
-    component: Account
-}, {
-    path: '/category',
-    component: Category
 }]

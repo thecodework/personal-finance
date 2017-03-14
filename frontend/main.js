@@ -7,11 +7,11 @@ import Framework7 from 'framework7'
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue'
 // Import F7 iOS Theme Styles
-// import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
-// import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min.css'
+import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
+import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min.css'
 /* OR for Material Theme: */
-import Framework7Theme from 'framework7/dist/css/framework7.material.min.css'
-import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
+// import Framework7Theme from 'framework7/dist/css/framework7.material.min.css'
+// import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
 // import 'semantic-ui-css/semantic.css'
 // import 'semantic-ui-css/semantic.js'
 Vue.use(VueRouter)
@@ -27,14 +27,14 @@ new Vue({
     framework7: {
         root: '#mainContainer',
         /* Uncomment to enable Material theme: */
-        material: true,
+        // material: true,
         routes: Routes,
         animateNavBackIcon: true,
         pushState: true,
         pushStateSeparator: '',
-        swipePanel: 'left',
+        // swipePanel: 'left',
         onPageInit: function() {
-            console.log('hi')
+            //console.log('hi')
         }
     },
     mounted() {},

@@ -5,7 +5,7 @@
 
     <!-- Left Panel -->
     <f7-panel left reveal layout="dark">
-      <f7-view id="left-panel-view" navbar-through :dynamic-navbar="true">
+      <f7-view id="left-panel-view" navbar-through :dynamic-navbar="true" main>
         <f7-navbar v-if="$theme.ios" title="John Doe" sliding></f7-navbar>
         <f7-pages>
           <f7-page>
@@ -22,7 +22,7 @@
 
     <!-- Main Views -->
     <f7-views>
-      <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
+      <f7-view id="main-view" navbar-through :dynamic-navbar="true" url="/">
         <!-- iOS Theme Navbar -->
         <f7-navbar v-if="$theme.ios">
           <f7-nav-left>
@@ -36,12 +36,41 @@
             <f7-link icon="icon-bars" open-panel="left"></f7-link>
           </f7-nav-left>
           <f7-nav-center sliding>Personal Finance</f7-nav-center>
+          <f7-nav-right>
+            <f7-link><f7-icon f7="bookmark" size="20"></f7-icon></f7-link>
+            <f7-link><f7-icon f7="search" size="20"></f7-icon></f7-link>
+            <f7-link open-login-screen="#login-screen"><f7-icon f7="collection" size="20"></f7-icon></f7-link>
+          </f7-nav-right>
         </f7-navbar>
-
         <tabs></tabs>
-
       </f7-view>
     </f7-views>
+
+    <f7-login-screen id="login-screen">
+      <f7-view>
+        <f7-pages>
+          <f7-page login-screen>
+            <f7-login-screen-title>Login</f7-login-screen-title>
+            <f7-list form>
+              <f7-list-item>
+                <f7-label>Username</f7-label>
+                <f7-input name="username" placeholder="Username" type="text"></f7-input>
+              </f7-list-item>
+              <f7-list-item>
+                <f7-label>Password</f7-label>
+                <f7-input name="password" type="password" placeholder="Password"></f7-input>
+              </f7-list-item>
+            </f7-list>
+            <f7-list>
+              <f7-list-button title="Sign In" close-login-screen></f7-list-button>
+              <f7-list-label>
+                <p>Click Sign In to close Login Screen</p>
+              </f7-list-label>
+            </f7-list>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-login-screen>
 </div>
 </template>
 <script>

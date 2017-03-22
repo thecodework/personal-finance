@@ -1,5 +1,5 @@
 <template>
-<f7-page name="account">
+<f7-page name="category">
     <h1>Welcome To Example Component</h1>
     <h2>Manage Categories</h2>
     <div>

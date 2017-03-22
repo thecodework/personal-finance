@@ -43,17 +43,7 @@
           </f7-nav-right>
         </f7-navbar>
         <f7-list form>
-  <!-- Text Input -->
-  <f7-list-item>
-    <f7-input type="text" placeholder="Name"/>
-  </f7-list-item>
-  <!-- Password -->
-  <f7-list-item>
-    <f7-input type="password" placeholder="Password"/>
-  </f7-list-item>
-  ...
-</f7-list>
-        <tabs></tabs>
+  
       </f7-view>
     </f7-views>
 

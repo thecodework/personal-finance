@@ -11,9 +11,9 @@
           <f7-page>
             <f7-navbar v-if="$theme.material" title="John Doe" sliding></f7-navbar>
             <f7-list>
-              <f7-list-item link="/account/" title="Account" link-view="#main-view" link-close-panel></f7-list-item>
-              <f7-list-item link="/category/" title="Category" link-view="#main-view" link-close-panel></f7-list-item>
-              <f7-list-item link="/expense/" title="Expense" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/login/" title="Profile" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/category/" title="Settings" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/expense/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
             </f7-list>
           </f7-page>
         </f7-pages>
@@ -42,6 +42,17 @@
             <f7-link open-login-screen="#login-screen"><f7-icon f7="collection" size="20"></f7-icon></f7-link>
           </f7-nav-right>
         </f7-navbar>
+        <f7-list form>
+  <!-- Text Input -->
+  <f7-list-item>
+    <f7-input type="text" placeholder="Name"/>
+  </f7-list-item>
+  <!-- Password -->
+  <f7-list-item>
+    <f7-input type="password" placeholder="Password"/>
+  </f7-list-item>
+  ...
+</f7-list>
         <tabs></tabs>
       </f7-view>
     </f7-views>

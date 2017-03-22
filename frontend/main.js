@@ -32,7 +32,7 @@ new Vue({
         routes: Routes,
         animateNavBackIcon: true,
         pushState: true,
-        pushStateSeparator: '#',
+        pushStateSeparator: '',
         // swipePanel: 'left',
         onPageInit: function() {
             //console.log('hi')

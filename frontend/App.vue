@@ -9,8 +9,8 @@
         <f7-navbar v-if="$theme.ios" title="John Doe" sliding></f7-navbar>
         <f7-pages>
           <f7-page>
-            <f7-navbar v-if="$theme.material" title="John Doe" sliding></f7-navbar>
-            <f7-list>
+           <f7-navbar v-if="$theme.material" title="John Doe" sliding></f7-navbar>
+           <f7-list>
               <f7-list-item link="/login/" title="Profile" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/category/" title="Settings" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/expense/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
@@ -43,6 +43,9 @@
           </f7-nav-right>
         </f7-navbar>
         <f7-list form>
+        </f7-list>
+
+
   
       </f7-view>
     </f7-views>

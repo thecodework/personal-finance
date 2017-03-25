@@ -5,6 +5,7 @@ import Weekly from './Components/Weekly.vue'
 import Monthly from './Components/Monthly.vue'
 import Total from './Components/Total.vue'
 import Calendar from './Components/Calendar.vue'
+import Accounts from './Components/Accounts.vue'
 
 import Dashboard from './Components/Dashboard.vue'
 import Login from './Components/Login.vue'
@@ -15,7 +16,7 @@ export default [{
     tabs: [{
         path: '/calendar/',
         tabId: 'calendar',
-        component: Calendar
+        component: Accounts
     }, {
         path: '/daily/',
         tabId: 'daily',

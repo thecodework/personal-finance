@@ -44,13 +44,13 @@
         </f7-navbar>
         <f7-list form>
         </f7-list>
+        <tabs></tabs>
 
 
-  
       </f7-view>
     </f7-views>
 
-    
+
 </div>
 </template>
 <script>

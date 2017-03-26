@@ -53,14 +53,14 @@
     <div class="list-block">
       <ul>
         <li>
-          <a href="" class="item-content item-link">
+          <a href="#" class="item-content item-link">
             <div class="item-inner">
               <div class="item-title">Income</div>
             </div>
           </a>
         </li>
         <li>
-          <a href="./public/index.html" class="item-content item-link">
+          <a href="#" class="item-content item-link">
             <div class="item-inner">
               <div class="item-title">Expense</div>
             </div>

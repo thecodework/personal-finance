@@ -45,9 +45,33 @@
         <f7-list form>
         </f7-list>
         <tabs></tabs>
- <a href="#" class="floating-button color-pink">
+ <a href="#" class="floating-button floating-button-to-popover open-popover color-purple">
     <i class="icon icon-plus"></i>
   </a>
+  <div class="popover demo-popover">
+  <div class="popover-inner">
+    <div class="list-block">
+      <ul>
+        <li>
+          <a href="" class="item-content item-link">
+            <div class="item-inner">
+              <div class="item-title">Income</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="./public/index.html" class="item-content item-link">
+            <div class="item-inner">
+              <div class="item-title">Expense</div>
+            </div>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
 
       </f7-view>
     </f7-views>

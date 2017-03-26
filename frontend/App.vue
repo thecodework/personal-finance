@@ -45,7 +45,9 @@
         <f7-list form>
         </f7-list>
         <tabs></tabs>
-
+ <a href="#" class="floating-button color-pink">
+    <i class="icon icon-plus"></i>
+  </a>
 
       </f7-view>
     </f7-views>

@@ -1,5 +1,4 @@
 import Tabs from './Components/Tabs.vue'
-
 import Daily from './Components/Daily.vue'
 import Weekly from './Components/Weekly.vue'
 import Monthly from './Components/Monthly.vue'
@@ -10,6 +9,7 @@ import Accounts from './Components/Accounts.vue'
 import Dashboard from './Components/Dashboard.vue'
 import Login from './Components/Login.vue'
 import Register from './Components/Register.vue'
+import about from './Components/about.vue'
 export default [{
     path: '/',
     components: Tabs,
@@ -33,8 +33,18 @@ export default [{
         path: '/total/',
         tabId: 'total',
         component: Total
+    },{
+
+    path: '/about',
+    tabId: 'about',
+    component: about
+    
+
     }]
-}, {
+},
+
+    
+ {
     path: '/login',
     component: Login
 }, {

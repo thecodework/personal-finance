@@ -7,6 +7,7 @@
       <f7-tab route-tab-id="weekly" />
       <f7-tab route-tab-id="monthly" />
       <f7-tab route-tab-id="total" />
+      <f7-tab route-tab-id="about" />
     </f7-block>
 
     <f7-toolbar tabbar top>
@@ -15,9 +16,17 @@
       <f7-link href="/weekly" route-tab-link="#weekly" text="Weekly"></f7-link>
       <f7-link href="/monthly" route-tab-link="#monthly" text="Monthly"></f7-link>
       <f7-link href="/total" route-tab-link="#total" text="Total"></f7-link>
+
+      
     </f7-toolbar>
+    <f7-link href="/about" class="floating-button color-pink" route-tab-link="#about" >
+      <i class="icon icon-plus"></i></f7-link>
+
   </f7-page>
+
 </template>
+
+
 <script>
 import Accounts from './Accounts.vue'
 import Expense from './Expense.vue'

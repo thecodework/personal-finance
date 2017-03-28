@@ -102,11 +102,16 @@
 <script>
     import Tabs from './Components/Tabs.vue'
     import Login from './Components/Login.vue'
-
+    import store2 from 'store2'
     export default {
         data() {
             return {
                 isLoggedIn: false
+            }
+        },
+        mounted() {
+            if (store2.get('_token')) {
+                this.isLoggedIn = true
             }
         },
         components: { Tabs, Login }

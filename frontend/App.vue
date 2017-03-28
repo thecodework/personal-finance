@@ -63,8 +63,8 @@
                 </f7-navbar>
                 <f7-list form="">
                 </f7-list>
-                <tabs>
-                </tabs>
+                <tabs></tabs>
+                <login :is-logged-in="isLoggedIn" @logged-in="isLoggedIn = true"></login>
                 <a class="floating-button floating-button-to-popover open-popover color-purple" href="#">
                     <i class="icon icon-plus">
                     </i>
@@ -101,8 +101,14 @@
 </template>
 <script>
     import Tabs from './Components/Tabs.vue'
+    import Login from './Components/Login.vue'
 
     export default {
-        components: { Tabs }
+        data() {
+            return {
+                isLoggedIn: false
+            }
+        },
+        components: { Tabs, Login }
     }
 </script>

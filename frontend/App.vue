@@ -55,7 +55,7 @@
                             <f7-icon f7="search" size="20">
                             </f7-icon>
                         </f7-link>
-                        <f7-link open-login-screen="#login-screen">
+                        <f7-link>
                             <f7-icon f7="collection" size="20">
                             </f7-icon>
                         </f7-link>

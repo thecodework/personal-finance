@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <!-- <div>
         <div class="column">
             <h2 class="ui teal image header">
-              <!-- <img src="assets/images/logo.png" class="image"> -->
+              <img src="assets/images/logo.png" class="image"> 
               <div class="content">
                 Register for new user
               </div>
@@ -30,6 +30,27 @@
             </div>
           </div>
     </div>
+ -->
+<f7-view id ="register">
+  <f7-pages>
+    <f7-page>
+      <f7-list form>
+          <f7-list-item>
+          <f7-label>E-mail</f7-label>
+            <f7-input v-model="userEmail" type="text" placeholder="E-mail address"></f7-input>
+          </f7-list-item>
+          <f7-list-item>
+            <f7-label>Password</f7-label>
+            <f7-input v-model="userPassword" type="password" placeholder="Password"></f7-input>
+          </f7-list-item>
+      </f7-list>
+
+      <f7-list>
+          <f7-list-button title="Register" @click="register"></f7-list-button>
+      </f7-list>    
+    </f7-page>
+  </f7-pages>
+</f7-view>
 </template>
 <script>
 import axios from 'axios'

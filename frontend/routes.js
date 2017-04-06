@@ -34,12 +34,9 @@ export default [{
         tabId: 'total',
         component: Total
     },{
-
     path: '/about',
     tabId: 'about',
     component: about
-    
-
     }]
 },
 

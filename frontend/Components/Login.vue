@@ -47,6 +47,9 @@ import store2 from 'store2'
                         alert('Email Password Does not match')
                     }
                 }.bind(this));
+            },
+            cancle(){
+
             }
         },
         mounted() {

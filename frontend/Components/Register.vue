@@ -33,7 +33,7 @@
  -->
 <f7-view id ="register">
   <f7-pages>
-    <f7-page>
+    <f7-page data-page="register">
       <f7-list form>
           <f7-list-item>
           <f7-label>E-mail</f7-label>

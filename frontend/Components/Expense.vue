@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="account">
+  <f7-page name="expense">
 <form class="ui form">
       <div class="field">
       <div class="ui fluid search selection dropdown">

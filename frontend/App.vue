@@ -65,10 +65,14 @@
                 </f7-list>
                 <tabs></tabs>
                 <login :is-logged-in="isLoggedIn" @logged-in="isLoggedIn = true"></login>
-                <a class="floating-button floating-button-to-popover open-popover color-purple" href="#">
+
+
+                <a class="floating-button floating-button-to-popover open-popover color-purple" href="/expense/">
                     <i class="icon icon-plus">
                     </i>
                 </a>
+
+
                 <div class="popover demo-popover">
                     <div class="popover-inner">
                         <div class="list-block">
